@@ -1,5 +1,7 @@
 # 📋 React Todo List Application
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20App-success?style=for-the-badge&logo=netlify)](https://todo-list-web-app2.netlify.app/)
+
 A modern, responsive todo list application built with React, TypeScript, and Bootstrap 4. Features real-time data persistence with localStorage and a clean, professional UI.
 
 ![React](https://img.shields.io/badge/React-18.0+-blue.svg)
