@@ -1,0 +1,247 @@
+// Import Google Fonts - Lato
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+// Essential SCSS Variables (for theme customization)
+$primary-color: rgba(191, 169, 26, 0.98);
+$primary-color-rgb: rgb(191, 169, 26);
+$border-light: #d3d3d3;
+$font-family: 'Lato', sans-serif;
+
+// Global App Styles - Use Bootstrap bg-light and min-vh-100
+.App {
+  font-family: $font-family;
+}
+
+.upcoming-activities {
+  .add-task-button {
+    background: #dae1e8;
+    color: $primary-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.25);
+    }
+  }
+}
+
+// Header Styles
+.activities-header {
+  border-radius: 12px 12px 0 0;
+  color: $primary-color;
+}
+
+// Separator Line
+.header-divider {
+  background-color: #e9ecef;
+  height: 1px;
+}
+
+// Task Item Styles
+.task-item-hover {
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: #f8f9fa;
+  }
+}
+
+// Completion Badge
+.completion-badge {
+  background-color: $primary-color;
+  width: 32px;
+  height: 32px;
+}
+
+// Action Button (Ellipsis button)
+.action-button {
+  color: $primary-color;
+  
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(191, 169, 26, 0.25);
+  }
+  
+  &:active,
+  &.active {
+    box-shadow: 0 0 0 0.2rem rgba(191, 169, 26, 0.25);
+  }
+}
+
+// Dropdown Positioning
+.dropdown-positioned {
+  position: absolute;
+  right: 0;
+  top: 100%;
+}
+
+// Menu Item Styles
+.menu-item-with-border {
+  border-bottom: 1px solid lightgrey;
+  font-size: 0.875rem;
+  
+  &:active,
+  &.active,
+  &:focus,
+  &.focus {
+    background-color: transparent !important;
+    color: inherit !important;
+  }
+}
+
+.menu-item-no-border {
+  font-size: 0.875rem;
+  
+  &:active,
+  &.active,
+  &:focus,
+  &.focus {
+    background-color: transparent !important;
+    color: inherit !important;
+  }
+}
+
+// Modal Backdrop
+.modal-backdrop-custom {
+  &.show {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  &.hide {
+    background-color: transparent;
+  }
+}
+
+.task-item {
+  transition: background-color 0.2s ease;
+  
+  .completion-indicator {
+    background-color: $primary-color;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .action-menu-toggle {
+    color: $primary-color;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: rgba(171, 149, 6, 0.98);
+    }
+    
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(191, 169, 26, 0.25);
+    }
+  }
+}
+
+// Bootstrap 4 Modal Enhancements
+.modal {
+  .modal-content {
+    border-radius: 12px;
+  }
+  
+  .modal-header {
+    background: $primary-color;
+    border-radius: 12px 12px 0 0;
+  }
+}
+
+// Form Inputs - Underlined style 
+.underlined-text-input {
+  border: none !important;
+  border-bottom: 1px solid #ccc !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+
+  &:focus {
+    border-bottom: 2px solid $primary-color !important;
+    box-shadow: none !important;
+  }
+}
+
+// Custom Button Styles
+.cancel-button {
+  background-color: transparent !important;
+  color: $primary-color !important;
+  border-color: $primary-color !important;
+  
+  &:hover {
+    background-color: rgba(191, 169, 26, 0.1) !important;
+  }
+}
+
+.save-button {
+  background-color: $primary-color !important;
+  border-color: $primary-color !important;
+  
+  &:disabled {
+    background-color: #ccc !important;
+    border-color: #ccc !important;
+    opacity: 0.6;
+  }
+}
+
+// Dropdown Menu Items
+.action-menu-item {
+  border-bottom: 1px solid $border-light;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+// Prevent all dropdown item color changes on click/focus
+.dropdown-item {
+  &:active,
+  &.active,
+  &:focus,
+  &.focus {
+    background-color: transparent !important;
+    color: inherit !important;
+  }
+}
+
+// Color Utilities
+.separator {
+  color: $primary-color;
+}
+
+
+.field-label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+// Animation for completed tasks
+.task-item.completed {
+  .completion-indicator {
+    animation: completedPulse 0.6s ease-out;
+  }
+}
+
+@keyframes completedPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+// Responsive Design - Only essential media queries
+@media (max-width: 768px) {
+  .upcoming-activities {
+    .add-task-button {
+      width: 36px;
+      height: 36px;
+    }
+  }
+  
+  .task-actions .completion-indicator {
+    width: 28px;
+    height: 28px;
+  }
+}
